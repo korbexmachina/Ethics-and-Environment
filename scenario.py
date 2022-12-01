@@ -1,5 +1,5 @@
 class scenario:
-    def __init__(self, body, option1, option2, option1_impact, option2_impact) -> None:
+    def __init__(self, body, option1, option2, option1_env, option1_money, option2_env, option2_money) -> None:
         """Initializes a new scenario
 
         Args:
@@ -12,8 +12,10 @@ class scenario:
         self.body = body
         self.option1 = option1
         self.option2 = option2
-        self.option1_impact = option1_impact
-        self.option2_impact = option2_impact
+        self.option1_impact = option1_env
+        self.option1_impact = option1_money
+        self.option2_impact = option2_env
+        self.option2_impact = option2_money
     
     def __str__(self) -> None:
         """Prints the scenario, along with the options
@@ -22,7 +24,7 @@ class scenario:
         print("---")
         print(f"{self.option1} : {self.option2}")
         
-    def option1_picked(self, points) -> int:
+    def option1_picked(self, environment, money) -> int:
         """Adjusts the total number of points
 
         Args:
@@ -31,9 +33,9 @@ class scenario:
         Returns:
             int: the new number of points after adding option1_impact to the total
         """
-        return (points + self.option1_impact)
+        return (environment + self.option1_env)
         
-    def option2_picked(self, points) -> int:
+    def option2_picked(self, environment, money) -> int:
         """Adjusts the total number of points
 
         Args:
@@ -42,4 +44,4 @@ class scenario:
         Returns:
             int: the new number of points after adding option2_impact to the total
         """
-        return (points + self.option2_impact)
+        return (environment + self.option2_env)
