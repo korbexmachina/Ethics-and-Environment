@@ -21,10 +21,10 @@ class scenario:
         """Prints the scenario, along with the options
         """
         print(self.body)
-        print("---")
-        print(f"{self.option1} : {self.option2}")
+        print("\n---\n")
+        print(f"Option 1: {self.option1}\nOption 2: {self.option2}")
         
-    def option1_picked(self, environment, money) -> int:
+    def option1_picked(self, environment, money) -> tuple:
         """Adjusts the total number of points
 
         Args:
@@ -33,9 +33,9 @@ class scenario:
         Returns:
             int: the new number of points after adding option1_impact to the total
         """
-        return (environment + self.option1_env)
+        return (environment + self.option1_env), (money + self.option1_money)
         
-    def option2_picked(self, environment, money) -> int:
+    def option2_picked(self, environment, money) -> tuple:
         """Adjusts the total number of points
 
         Args:
@@ -44,4 +44,4 @@ class scenario:
         Returns:
             int: the new number of points after adding option2_impact to the total
         """
-        return (environment + self.option2_env)
+        return (environment + self.option2_env), (money + self.option2_money)
