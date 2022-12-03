@@ -1,13 +1,15 @@
 class scenario:
     def __init__(self, body, option1, option2, option1_env, option1_money, option2_env, option2_money) -> None:
-        """Initializes a new scenario
+        """Initializzes a new scenario
 
         Args:
-            body (str): The body text for the scenario
+            body (str): The body text of the scenario
             option1 (str): The first option
             option2 (str): The second option
-            option1_impact (int): The impact that the first choice will have on the points total
-            option2_impact (int): The impact that the second choice will have on the points total
+            option1_env (int): The impact of the first option on the environment variable
+            option1_money (int): The impact of the first option on the money variable
+            option2_env (int): The impact of the second option on the environment variable
+            option2_money (int): The impact of the third option on the money variable
         """
         self.body = body
         self.option1 = option1
