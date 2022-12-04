@@ -14,10 +14,10 @@ class scenario:
         self.body = body
         self.option1 = option1
         self.option2 = option2
-        self.option1_impact = option1_env
-        self.option1_impact = option1_money
-        self.option2_impact = option2_env
-        self.option2_impact = option2_money
+        self.option1_env = option1_env
+        self.option1_money = option1_money
+        self.option2_env = option2_env
+        self.option2_money = option2_money
     
     def __str__(self) -> None:
         """Prints the scenario, along with the options

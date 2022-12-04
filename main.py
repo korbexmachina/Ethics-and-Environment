@@ -17,11 +17,11 @@ while True:
     choice = input("Choose an option:")
     if choice == "1":
         money = scenario0.option1_picked(environment, money)[0]
-        environment = scenario0.option2_picked(environment)[1]
+        environment = scenario0.option1_picked(environment, money)[1]
         break
     elif choice == "2":
         money = scenario0.option2_picked(environment, money)[0]
-        environment = scenario0.option2_picked(environment)[1]
+        environment = scenario0.option2_picked(environment, money)[1]
         break
     else:
         print("Invalid choice, please make a valid selection: ", end="")
