@@ -101,7 +101,7 @@ elif environment < 10 and money < 10:
     print("Your decisions have cost us financially and the board believes someone more amenable to our goals deserves your position. We now have to file for bankruptcy and deal with an innumerable amount of federal and state lawsuits.")
 elif environment > 10 and money < 10:
     print("You were so busy worrying about the “environment” and being “sustainable” that you ran Corporation Co. into the ground, thanks to you millions of people are unemployed!")
-elif environment >= 10 and money < 10:
+elif environment >= 10 and money > 10:
     print("You did your job well. We made a profit.")
 else:
     print("You were perfectly mediocre.")
