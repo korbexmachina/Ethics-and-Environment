@@ -105,7 +105,7 @@ for i in scenarios:
             print("Invalid choice, please make a valid selection: ", end="") # Prompt for a valid choice, and run through the loop again
 
 #Endings
-print(f"Money: {money}\nEnvironmental impact: {environment}")
+print(f"Money: {money}\nEnvironmentalism: {environment}")
 if environment < -10:
     print("Our company is being blamed for environmental degradation, we need somebody to blame. Who better than those average joe consumers!\nShame on them for ruining the environment.")
 elif environment >= 10 and money >= 10:
