@@ -119,4 +119,4 @@ elif environment > 10 and money < 10:
 elif environment >= 10 and money > 10:
     print("You did your job well. We made a profit.")
 else:
-    print("You were perfectly mediocre.") # Failsafe ending, in case of bugs
+    print("You were perfectly mediocre.") # Failsafe ending
