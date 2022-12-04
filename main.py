@@ -1,5 +1,7 @@
 from scenario import Scenario
 
+# Creating all of the scenario objects
+
 scenario0 = Scenario(
     "Oh no! Those pesky environmental regulations are really harshing our company's mellow. What should we do?", 
     "Keep company manufacturing in regulated country",
@@ -61,12 +63,14 @@ scenario8 = Scenario(
     "Dump it into the ocean. It's big enough to hold it all.",
     "Fund waste management research",
     0, 0, -99, -2
-)
+) # -99 forces the blame the consumers ending
 
+# Initializing variables
 money = 10
 environment = 10
 scenarios = [scenario0, scenario1, scenario2, scenario3, scenario4, scenario5, scenario6, scenario7, scenario8]
 
+# The actual game loop
 for i in scenarios:
     print(f"Money: {money}\nEnvironmental impact: {environment}")
     print(i.__str__())
@@ -83,8 +87,9 @@ for i in scenarios:
             print("\n" * 100)
             break
         else:
-            print("Invalid choice, please make a valid selection: ", end="")
+            print("Invalid choice, please make a valid selection: ", end="") # Prompt for a valid choice, and run through the loop again
 
+#Endings
 print(f"Money: {money}\nEnvironmental impact: {environment}")
 if environment < -50:
     print("Our company is being blamed for environmental degradation, we need somebody to blame. Who better than those average joe consumers! Shame on them for ruining the environment.")
