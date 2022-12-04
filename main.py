@@ -89,13 +89,13 @@ for i in scenarios:
     while True:
         choice = input("Choose an option:")
         if choice == "1":
-            money = i.option1_picked(environment, money)[0]
-            environment = i.option1_picked(environment, money)[1]
+            money = i.option1_picked(environment, money)[1]
+            environment = i.option1_picked(environment, money)[0]
             print("\n" * 100)
             break
         elif choice == "2":
-            money = i.option2_picked(environment, money)[0]
-            environment = i.option2_picked(environment, money)[1]
+            money = i.option2_picked(environment, money)[1]
+            environment = i.option2_picked(environment, money)[0]
             print("\n" * 100)
             break
         else:
