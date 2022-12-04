@@ -60,7 +60,7 @@ scenario8 = Scenario(
     "Waste from one of our new factories is starting to build up, what should we do with it?",
     "Dump it into the ocean. It's big enough to hold it all.",
     "Fund waste management research",
-    0, 0, -100, -2
+    0, 0, -99, -2
 )
 
 money = 10
@@ -85,15 +85,18 @@ for i in scenarios:
         else:
             print("Invalid choice, please make a valid selection: ", end="")
 
+print(f"Money: {money}\nEnvironmental impact: {environment}")
 if environment < -50:
     print("Our company is being blamed for environmental degradation, we need somebody to blame. Who better than those average joe consumers! Shame on them for ruining the environment.")
-elif environment > 10 and money > 10:
+elif environment >= 10 and money >= 10:
     print("Wow! We at Corporation Co. are astonished at your ability to both turn a profit and make our operations more sustainable. We didn't know that was possible. Keep up the good work!")
-elif environment == 10 and money < 10:
+elif environment <= 10 and money < 10:
     print("Your decisions have cost us financially and the board believes someone more amenable to our goals deserves your position.")
-elif environment < 10 and money < 5:
+elif environment < 10 and money < 10:
     print("Your decisions have cost us financially and the board believes someone more amenable to our goals deserves your position. We now have to file for bankruptcy and deal with an innumerable amount of federal and state lawsuits.")
 elif environment > 10 and money < 10:
     print("You were so busy worrying about the “environment” and being “sustainable” that you ran Corporation Co. into the ground, thanks to you millions of people are unemployed!")
-elif environment == 10 and money > 10:
+elif environment >= 10 and money < 10:
     print("You did your job well. We made a profit.")
+else:
+    print("You were perfectly mediocre.")
