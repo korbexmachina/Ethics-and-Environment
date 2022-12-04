@@ -19,7 +19,7 @@ scenario1 = Scenario(
 )
 
 scenario2 = Scenario(
-    "There's been a new innovation in manufacturing technology that can really increase our production,\noh slight issue though it might have some environmental consequences.",
+    "There's been a new innovation in manufacturing technology that can really increase our production.\nOh, slight issue though, it may have some environmental consequences.",
     "Go for it",
     "No it is too dangerous",
     -3, 2, 1, 0,
@@ -70,7 +70,7 @@ scenario8 = Scenario(
     "Waste from one of our new factories is starting to build up, what should we do with it?",
     "Dump it into the ocean. It's big enough to hold it all.",
     "Fund waste management research",
-    -99, -2, 0, 0, # -99 forces the blame the consumers ending
+    -99, -2, 0, 0, # -99 forces the "blame the consumers" ending
     "ʕ•ᴥ•ʔ (The Lawyer)"
 )
 
@@ -79,9 +79,12 @@ money = 10
 environment = 10
 scenarios = [scenario0, scenario1, scenario2, scenario3, scenario4, scenario5, scenario6, scenario7, scenario8]
 
+# Opening screen
+print("\n" * 100) # Clearing the screen
 print("Welcome to the team, Big Executive! Your job is to improve the corporation. Good luck!\nType 1 or 2 to select an option when prompted\nPress Enter to continue:")
-input()
-print("\n" * 100)
+input() # Allows the user to press enter wheen they want to continue past the opening screen
+print("\n" * 100) # Clearing the screen
+
 # The actual game loop
 for i in scenarios:
     print(f"Money: {money}\nEnvironmentalism: {environment}")
@@ -89,14 +92,14 @@ for i in scenarios:
     while True:
         choice = input("Choose an option:")
         if choice == "1":
-            money = i.option1_picked(environment, money)[1]
             environment = i.option1_picked(environment, money)[0]
-            print("\n" * 100)
+            money = i.option1_picked(environment, money)[1]
+            print("\n" * 100) # Clearing the screen
             break
         elif choice == "2":
-            money = i.option2_picked(environment, money)[1]
             environment = i.option2_picked(environment, money)[0]
-            print("\n" * 100)
+            money = i.option2_picked(environment, money)[1]
+            print("\n" * 100) # Clearing the screen
             break
         else:
             print("Invalid choice, please make a valid selection: ", end="") # Prompt for a valid choice, and run through the loop again
@@ -116,4 +119,4 @@ elif environment > 10 and money < 10:
 elif environment >= 10 and money > 10:
     print("You did your job well. We made a profit.")
 else:
-    print("You were perfectly mediocre.")
+    print("You were perfectly mediocre.") # Failsafe ending, in case of bugs
