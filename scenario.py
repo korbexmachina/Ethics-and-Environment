@@ -1,4 +1,4 @@
-class scenario:
+class Scenario:
     def __init__(self, body, option1, option2, option1_env, option1_money, option2_env, option2_money) -> None:
         """Initializzes a new scenario
 
