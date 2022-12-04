@@ -103,7 +103,8 @@ for i in scenarios:
 
 #Endings
 print(f"Money: {money}\nEnvironmental impact: {environment}")
-if environment < -50:
+if environment < -10:
+    print("\n" * 100)
     print("Our company is being blamed for environmental degradation, we need somebody to blame. Who better than those average joe consumers!\nShame on them for ruining the environment.")
 elif environment >= 10 and money >= 10:
     print("Wow! We at Corporation Co. are astonished at your ability to both turn a profit and make our operations more sustainable.\nWe didn't know that was possible. Keep up the good work!")
